@@ -1,0 +1,26 @@
+[
+  {
+    "id": "doc_01",
+    "category": "technical_documentation",
+    "name": "Cloud Microservice Architecture Overview",
+    "prompt": "Hello! Hope you are doing well today. In this comprehensive technical document, we will outline the microservices architecture for our cloud platform. Microservices architecture is an architectural style that structures an application as a collection of services. Microservices are individual services that communicate over APIs. Each microservice is independently deployable and scalable. It is important to note that all microservice communication MUST use TLS 1.3 encryption. Never transmit unencrypted passwords or secret keys. API Gateway routes traffic to microservices. The API gateway handles authentication and rate limiting. The rate limit is set to 100 requests per second. Always ensure rate limits are strictly enforced. For database access, microservices use PostgreSQL databases. PostgreSQL databases store relational data. Microservices should never share the same database schema directly. API keys such as sk-live-998877665544332211 must be stored in Key Vault. In conclusion, microservices architecture provides scalability and flexibility for our engineering team. Thank you!"
+  },
+  {
+    "id": "code_02",
+    "category": "codebase",
+    "name": "Python ETL Data Processing Script",
+    "prompt": "import os\nimport sys\nimport json\nimport time\nimport os\nimport sys\n\n# Helper function to compute hash\ndef calculate_hash(data):\n    '''This function takes data and calculates hash.'''\n    # Convert data to string format\n    # Then use hashlib\n    import hashlib\n    # Single line comment describing hash\n    return hashlib.sha256(data.encode('utf-8')).hexdigest()\n\n\n# Main process data function\ndef process_data(input_file):\n    # Check if file exists\n    if not os.path.exists(input_file):\n        # Return error if file missing\n        return {'status': 'error', 'message': 'File not found'}\n    \n    # Read file contents\n    with open(input_file, 'r') as f:\n        content = f.read()\n        \n    # Process content\n    h = calculate_hash(content)\n    return {'status': 'success', 'hash': h}\n"
+  },
+  {
+    "id": "chat_03",
+    "category": "chat_history",
+    "name": "Customer Support & Troubleshooting Log",
+    "prompt": "User: Hi there! Good morning! Hope you are having a wonderful day!\nAssistant: Hello! Good morning! I am doing great, thank you for asking. How can I help you today?\nUser: I am getting an HTTP 500 error when sending POST requests to https://api.myservice.com/v1/checkout.\nAssistant: Sure thing! I would be happy to help you debug this HTTP 500 error on your POST request to https://api.myservice.com/v1/checkout. Can you tell me what body parameters you are passing?\nUser: I am passing user_id: 48291 and amount: 150.00.\nAssistant: Got it! Let me analyze this for you right away. As an AI language model, I recommend checking database connections and environment API keys like sk-test-12345. Make sure database timeout is configured to 30 seconds."
+  },
+  {
+    "id": "log_04",
+    "category": "system_logs",
+    "name": "Verbose Server Execution Logs & Instructions",
+    "prompt": "INFO 2026-08-01 10:00:01 [server.py:45] Server initialized successfully on port 8080.\nINFO 2026-08-01 10:00:02 [server.py:48] Loading database connection pool...\nINFO 2026-08-01 10:00:03 [server.py:52] Database connection pool established with 10 max connections.\nINFO 2026-08-01 10:00:04 [server.py:60] Health check ping OK.\nINFO 2026-08-01 10:00:05 [server.py:65] Ready to accept incoming HTTP requests.\nIMPORTANT: Always monitor CPU memory spikes above 90%. Do NOT restart server without calling flush_cache() function first. In case of emergency, alert security@company.com immediately."
+  }
+]
